@@ -2,15 +2,37 @@
   text-align: center;
 }
 
+.container {
+  display: flex;
+  gap: 10px; /* Space between columns */
+  padding: 10px; /* Space around the container */
+}
+
+.left-column, .right-column {
+  display: flex;
+  flex-direction: column;
+  flex: 1; /* Allows columns to take equal space */
+}
+
+.row {
+  border: 1px solid #ccc; /* Optional: border for visibility */
+  padding: 10px; /* Optional: padding inside each row */
+  margin-bottom: 5px; /* Optional: space between rows */
+  flex: 1; /* Ensure rows take up equal space */
+}
+
+/* Make sure the right column has the same number of rows */
+.right-column {
+  display: flex;
+  flex-direction: column;
+  flex: 1; /* Allows column to take equal space */
+}
+
+
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
 }
 
 .App-header {
