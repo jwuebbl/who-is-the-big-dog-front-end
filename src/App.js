@@ -1,20 +1,17 @@
 import React from 'react';
-import './App.css'; // Import the CSS file
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Login from './components/Login';
+import Dashboard from './components/Dashboard';
+import PrivateRoute from './components/PrivateRoute';
 
 function App() {
   return (
-    <div className="container">
-      <div className="left-column">
-        {[...Array(10).keys()].map(i => (
-          <div key={i} className="row">Left {i + 1}</div>
-        ))}
-      </div>
-      <div className="right-column">
-        {[...Array(9).keys()].map(i => (
-          <div key={i} className="row">Right {i + 1}</div>
-        ))}
-      </div>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Login />} />
+        <Route path="/dashboard" element={<PrivateRoute component={Dashboard} />} />
+      </Routes>
+    </Router>
   );
 }
 
