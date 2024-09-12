@@ -1,8 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import './Login.css'; // Import the CSS file for styling
+import './Signup.css'; // Import the CSS file for styling
 
-function Login() {
+function Signup() {
   return (
     <div className="login-container">
       <div className="logo-container">
@@ -10,19 +9,22 @@ function Login() {
       </div>
       <div className="form-container">
         <form>
-          <h2>Login</h2>
+          <h2>Create Account</h2>
+          
+          <label htmlFor="email">Email</label>
+          <input type="email" id="email" name="email" required />
+          
           <label htmlFor="username">Username</label>
           <input type="text" id="username" name="username" required />
+          
           <label htmlFor="password">Password</label>
           <input type="password" id="password" name="password" required />
-          <button type="submit">Login</button>
+          
+          <button type="submit">Create Account</button>
         </form>
-        <div className="signup-link">
-          <p>Don't have an account? <Link to="/signup">Sign up here</Link></p>
-        </div>
       </div>
     </div>
   );
 }
 
-export default Login;
+export default Signup;
